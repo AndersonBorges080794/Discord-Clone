@@ -12,7 +12,7 @@
 <script>
 
 
-    import ServerList from './ServerList/index.vue'
+    import ServerList from './ServerList';
 
     export default{
         components:{
