@@ -9,6 +9,7 @@
     <ServerButton :mentions="31" />
     <ServerButton hasNotification />
     <ServerButton :mentions="30" hasNotification />
+    <ServerButton v-for="servers in 18" :key="servers.id" />
   </div>
 </template>
 
@@ -18,7 +19,7 @@ import ServerButton from "./ServerButton";
 export default {
   components: {
     ServerButton
-  },
+  }
 };
 </script>
 
@@ -32,6 +33,12 @@ export default {
   background-color: var(--tertiary);
   padding: 11px 0;
   max-height: 100vh;
+  overflow-y: scroll;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  
 }
 
 .separator {
