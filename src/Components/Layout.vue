@@ -5,6 +5,9 @@
         <ServerList />
         <ServerName />
         <ChannelList />
+        <UserInfo />
+        <ChannelInfo />
+        <ChannelData />
 
     </div>
     
@@ -14,15 +17,22 @@
 <script>
 
 
-    import ServerList from './ServerList';
-    import ServerName from './ServerName';
+    import ServerList from './ServerList'
+    import ServerName from './ServerName'
     import ChannelList from './ChannelList'
+    import UserInfo from './UserInfo'
+    import ChannelInfo from './ChannelInfo'
+    import ChannelData from './ChannelData'
 
     export default{
         components:{
             ServerList,
             ServerName,
             ChannelList,
+            UserInfo,
+            ChannelInfo,
+            ChannelData,
+
         }
     }
 

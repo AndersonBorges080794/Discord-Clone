@@ -1,14 +1,14 @@
 <template>
-    <div class="container">
+    <div class="container" :class="{ active: selected}">
         <div class="channel-info">
             <HashTagIcon class="hash-icon" :sizer="20" />
-            <div>Chat Livre</div>
+            <div>{{channelName}}</div>
         </div>
         <div class="channel-actions">
             <InviteIcon class="icon-actions" :size="16" />
             <SettingsIcon class="icon-actions" :size="16" />
-
         </div>
+
     </div>   
 </template>
 
@@ -23,7 +23,13 @@ export default {
         HashTagIcon,
         InviteIcon,
         SettingsIcon
+    },
+
+    props: {
+        channelName: String,
+        selected: Boolean
     }
+    
     
 }
 </script>
@@ -64,6 +70,11 @@ export default {
         .icon-actions{
             color: var(--symbol);
             margin-left: 4px;
+            transition: 0.2s;
+            &:hover{
+                color: var(--white);
+                
+            }
         }
     }
 

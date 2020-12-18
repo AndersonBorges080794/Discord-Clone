@@ -6,7 +6,12 @@
                 <AddCategoryIcon :size="21" />
             </div>
         </div>
-        <ChannelButton />
+        <ChannelButton selected channelName="Chat-livre" />
+        <ChannelButton channelName="VueJS" />
+        <ChannelButton channelName="NodeJS" />
+        <ChannelButton channelName="ReactJS" />
+        <ChannelButton channelName="JS" />
+        <ChannelButton channelName="TS" />
     </div>  
 </template>
 
