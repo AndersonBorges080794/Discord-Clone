@@ -1,34 +1,13 @@
 <template>
     <div class="channel-data">
         <div class="messages">
-            <ChannelMessage />
-            <ChannelMessage />
-            <ChannelMessage />
-            <ChannelMessage />
-            <ChannelMessage />
-            <ChannelMessage />
-            <ChannelMessage />
-            <ChannelMessage />
-            <ChannelMessage />
-            <ChannelMessage />
-            <ChannelMessage />
-            <ChannelMessage />
-            <ChannelMessage />
-            <ChannelMessage />
-            <ChannelMessage />
-            <ChannelMessage />
-            <ChannelMessage />
-            <ChannelMessage />
-            <ChannelMessage />
-            <ChannelMessage />
-            <ChannelMessage />
-            <ChannelMessage />
-            <ChannelMessage />
-            <ChannelMessage />
-            <ChannelMessage />
-            <ChannelMessage />
-            <ChannelMessage />
-            <ChannelMessage />
+            <ChannelMessage author="João" date="01/12/2020" isBot hasMention>Está é uma mensagem!!</ChannelMessage>
+            <ChannelMessage author="João" date="01/12/2020" isBot >Está é uma mensagem!!</ChannelMessage>
+            <ChannelMessage v-for="messages in 18" :key="messages.id" author="João" date="01/12/2020"  >Está é uma mensagem!!</ChannelMessage>          
+            
+            <ChannelMessage author="Anderson Borges" date="08/08/2020" hasMention> 
+                <Mention> José Campos</Mention>, olha só isso!
+            </ChannelMessage>
         </div>
         <div class="input-wrapper">
             <input type="text" placeholder="Conversar em #chat-livre">
@@ -41,16 +20,23 @@
 
 <script>
 
+import Vue from "vue";
 import At from 'vue-material-design-icons/At'
 import ChannelMessage from './ChannelMessage.vue'
+
 
 export default {
     components:{
         At,
         ChannelMessage
-    }
+    },
     
-}
+};
+
+Vue.component("Mention", {
+    template: '<span class="mention"><slot /></span>',  
+});
+
 </script>
 
 <style lang="scss" scoped>
@@ -69,6 +55,12 @@ export default {
     height: calc(100vh - 46px - 68px);
     max-height: calc(100vh - 46px - 68px);
     overflow-y: scroll;
+
+    .channel-message:first-child{
+        margin-top: 0px;
+    }
+
+    
 
     &::-webkit-scrollbar{
         width: 8px;
